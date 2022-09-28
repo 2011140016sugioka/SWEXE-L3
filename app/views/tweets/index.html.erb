@@ -1,0 +1,15 @@
+<h1>Twitter（仮）</h1>
+<% @tweets.each do |tweet| %>
+    <p>
+        <%= tweet.message %>
+        <%= tweet.tdate %><br>
+        <%= (Time.current.min - tweet.tdate.min).abs %>分前にツイートしました
+        <br>
+        <%= link_to 'ツイートの編集', "/tweets/#{tweet.id}/edit" %>
+        <%= link_to '経過分数の表示', "/tweets/#{tweet.id}" %>
+        <%= link_to 'ツイートの削除', "/tweets/#{tweet.id}", method: :delete %>
+    </p>
+<% end %>
+<p>
+    <%= link_to 'ツイートする', '/tweets/new' %>
+</p>
