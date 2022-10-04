@@ -35,5 +35,5 @@ class TweetsController < ApplicationController
     tweet.update(message: params[:tweet][:message], tdate: Time.current)
     redirect_to '/'
   end
-
+  
 end
